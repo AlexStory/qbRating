@@ -1,17 +1,42 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>QB Rating</ion-title>
   </ion-navbar>
 </ion-header>
 
+
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+
+  <ion-item>
+    <ion-label #league>{{isNfl ? "NFL" : "NCAA"}}</ion-label>
+    <ion-toggle [(ngModel)]="isNfl" #toggleLeague></ion-toggle>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Attempts</ion-label>
+    <ion-input type="number" [(ngModel)]="attempts" required></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label>Completons</ion-label>
+    <ion-input type="number" [(ngModel)]="completions" required></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Yards</ion-label>
+    <ion-input type="number" [(ngModel)]="yards" required></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Touchdowns</ion-label>
+    <ion-input type="number" [(ngModel)]="touchdowns" required></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Interceptions</ion-label>
+    <ion-input type="number" [(ngModel)]="interceptions" required></ion-input>
+  </ion-item>
+
+  <h3 text-right *ngIf="isNfl && nflValid">{{nflRat}}</h3>
+  <h3 text-right *ngIf="!isNfl && ncaaValid">{{ncaaRat}}</h3>
 </ion-content>
