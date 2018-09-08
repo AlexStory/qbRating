@@ -37,6 +37,6 @@
     <ion-input type="number" [(ngModel)]="interceptions" required></ion-input>
   </ion-item>
 
-  <h3 text-right *ngIf="isNfl && valid">{{nflRat}}</h3>
-  <h3 text-right *ngIf="!isNfl && valid">{{ncaaRat}}</h3>
+  <h3 text-right *ngIf="isNfl && nflValid">{{nflRat}}</h3>
+  <h3 text-right *ngIf="!isNfl && ncaaValid">{{ncaaRat}}</h3>
 </ion-content>

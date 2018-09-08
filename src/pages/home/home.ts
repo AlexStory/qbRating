@@ -101,6 +101,14 @@ export class HomePage {
     && this.interceptions !== undefined)
   }
 
+  get nflValid(): boolean {
+    return !isNaN(this.nflRat.toNumber())
+  }
+
+  get ncaaValid(): boolean {
+    return !isNaN(this.ncaaRat.toNumber())
+  }
+
   get nanAttempts() {
     return isNaN(this.attempts)
   }
